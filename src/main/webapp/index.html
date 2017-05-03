@@ -1,225 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>EvConnect</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
-
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="lib/simple-line-icons/css/simple-line-icons.css">
-
-    <!-- Theme CSS -->
-    <link href="css/new-age.min.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
+<body>
+  <nav id="nav" class="transparent" role="navigation">
+    <div class="nav-wrapper row">
+        <a href="#" data-activates="nav-mobile" style="position:absolute;" class="button-collapse"><i class="material-icons">menu</i></a>
 
-<body id="page-top">
-
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">About</a>
+        <a id="logo-container" href="#" class="left col s4 m4 offset-s4 offset-m4 valign-wrapper hide-on-large-only">
+            <div class="center">
+                <img src="images/11.png" style="positon:absolute; width:100%; height:100%; valign">
             </div>
+        </a>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="#download">Download</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#features">Features</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                </ul>
+        <a id="logo-container" href="#" class="left col offset-s1 offset-l1 offset-m1 s8 l4 m4 valign-wrapper hide-on-med-and-down">
+            <div class="hide-on-med-and-down center">
+                <img src="images/11.png" style="height:30px; margin-top:20px;">
             </div>
-            <!-- /.navbar-collapse -->
+        </a>
+
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#institutions">Institutions</a></li>
+        <li><a href="#clients">Clients</a></li>
+        <li><a href="#app">App</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#signup">Sign up</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+          <li><a href="#institutions">Institutions</a></li>
+          <li><a href="#clients">Clients</a></li>
+          <li><a href="#app">App</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#signup">Sign up</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="no-pad-bot no-margin full-page valign-wrapper row" id="index-banner">
+      <img src="images/10.png" class="col s10 m6 l6 offset-s1 offset-m3 offset-l3">
+  </div>
+
+
+  <section class="row full-page scrollspy grey lighten-2" id="about">
+    <div class="col s12 m6 l6 full-page valign-wrapper" style="padding:0">
+        <div class="container valign center grey-text darken-3">
+            <h3>About evConnect</h3>
+            <br>
+           		We are evConnect!
         </div>
-        <!-- /.container-fluid -->
-    </nav>
+    </div>
+    <div class="col s12 m6 l6 full-page" style="padding:0;">
+        <div class="carousel carousel-slider full-page">
+            <a class="carousel-item full-page" href="#one!"><div class="full-page" style="background: url(images/rectorat.jpg) 50% 50%; background-size:cover;"></div></a>
+            <a class="carousel-item full-page" href="#two!"><div class="full-page" style="background: url(images/bib.jpg) 50% 50%; background-size:cover;"></div></a>
+            <a class="carousel-item full-page" href="#three!"><div class="full-page" style="background: url(images/acs.png) 50% 50%; background-size:cover;"></div></a>
+        </div>
+    </div>
+  </section>
 
-    <header>
-        <div class="container">
+  <section class="full-page scrollspy grey lighten-4 no-margin valign-wrapper" id="institutions">
+      <div class="container center row grey-text darken-3 valign">
+          <br>
+          <h3>Institutions</h3>
+          <div class="valign-wrapper">
+              <img src="images/acs.png" class="col s12 m12 l12 responsive-img" >
+          </div>
+          <br>
+
+          <div class="row">
+              <div class="col s12 m4 l4">
+                  <div class="col s1 m1 l1"><i class="material-icons">ic_perm_identity</i></div>
+                  <div class="col s11 m11 l11">TEST</div>
+              </div>
+              <div class="col s12 m4 l4">
+                  <div class="col s1 m1 l1"><i class="material-icons">ic_perm_identity</i></div>
+                  <div class="col s11 m11 l11">TEST</div>
+              </div>
+
+              <div class="col s12 m4 l4">
+                  <div class="col s1 m1 l1"><i class="material-icons">ic_perm_identity</i></div>
+                  <div class="col s11 m11 l11">TEST</div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="row full-page scrollspy grey lighten-2" id="clients">
+      <br><br>
+        <div class="container center grey-text darken-3">
+            <h3>Clients</h3>
+        </div>
+  </section>
+
+  <section class="row full-page scrollspy grey lighten-4" id="app">
+    <div class="col s12 m6 l6 full-page valign-wrapper" style="padding:0">
+        <div class="container valign center grey-text darken-3">
+            <h3>Download the app</h3>
+            <br>
+            teeeeext
+            <br><br><br>
+            <img class="col s12 m12 l12" src="images/google-play-button.png">
+        </div>
+    </div>
+    <div class="col s12 m6 l6 full-page center valign-wrapper" style="padding:0;">
+        <img src="images/phone.png" class="responsive-img valign center">
+    </div>
+  </section>
+
+  <section class="row full-page scrollspy grey lighten-2" id="clients">
+      <br><br>
+        <div class="container center grey-text darken-3">
+            <h3>The Team</h3>
+        </div>
+        <div class="row">
             <div class="row">
-                <div class="col-sm-7">
-                    <div class="header-content">
-                        <div class="header-content-inner">
-                            <h1>Welcome to EvConnect!</h1>
-                            <a href="#download" class="btn btn-outline btn-xl page-scroll">Start Now for Free!</a>
-                        </div>
-                    </div>
+                <div class="person">
+                    <img src="images/1.jpg">
                 </div>
-                <div class="col-sm-5">
-                    
+                <div class="person">
+                    <img src="images/2.png">
+                </div>
+                <div class="person">
+                    <img src="images/3.png">
+                </div>
+            </div>
+            <div class="right">
+                <div class="person">
+                    <img src="images/4.png">
+                </div>
+                <div class="person">
+                    <img src="images/5.png">
+                </div>
+                <div class="person">
+                    <img src="images/6.png">
                 </div>
             </div>
         </div>
-    </header>
+  </section>
 
-    <section id="download" class="download bg-primary text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <h2 class="section-heading">Discover what all the buzz is about!</h2>
-                    <p>Our app is available on Android devices! Download now to get started!</p>
-                    <div class="badges">
-                        <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <footer class="row page-footer no-margin valign-wrapper hide-on-med-and-up" style="background-color: rgb(33, 33, 33); padding: 10px 0 10px 0;">
+          <img src="images/11.png" class="col s9 valign">
+          <img src="images/icon.png" class="col s3 valign">
+  </footer>
 
-    <section id="features" class="features">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="section-heading">
-                        <h2>Unlimited Features, Unlimited Fun</h2>
-                        <p class="text-muted">Check out what you can do with this app theme!</p>
-                        <hr>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="device-container">
-                        <div class="device-mockup iphone6_plus portrait white">
-                            <div class="device">
-                                <div class="screen">
-                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                    <img src="img/demo-screen-1.jpg" class="img-responsive" alt=""> </div>
-                                <div class="button">
-                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="feature-item">
-                                    <i class="icon-screen-smartphone text-primary"></i>
-                                    <h3>Device Mockups</h3>
-                                    <p class="text-muted">Ready to use HTML/CSS device mockups, no Photoshop required!</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="feature-item">
-                                    <i class="icon-camera text-primary"></i>
-                                    <h3>Flexible Use</h3>
-                                    <p class="text-muted">Put an image, video, animation, or anything else in the screen!</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="feature-item">
-                                    <i class="icon-present text-primary"></i>
-                                    <h3>Free to Use</h3>
-                                    <p class="text-muted">As always, this theme is free to download and use for any purpose!</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="feature-item">
-                                    <i class="icon-lock-open text-primary"></i>
-                                    <h3>Open Source</h3>
-                                    <p class="text-muted">Since this theme is MIT licensed, you can use it commercially!</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <footer class="row page-footer no-margin valign-wrapper hide-on-small-only" style="background-color: rgb(33, 33, 33); padding: 10px 0 10px 0; position:relative;">
+          <img src="images/11.png" class="col m3 l3 valign">
+          <div class="col m6 l6"></div>
+          <img src="images/icon.png" class="valign right" style="height:5vh;margin-right:50px;">
+  </footer>
 
-    <section class="cta">
-        <div class="cta-content">
-            <div class="container">
-                <h2>Stop waiting.<br>Start building.</h2>
-                <a href="#contact" class="btn btn-outline btn-xl page-scroll">Let's Get Started!</a>
-            </div>
-        </div>
-        <div class="overlay"></div>
-    </section>
 
-    <section id="contact" class="contact bg-primary">
-        <div class="container">
-            <h2>We <i class="fa fa-heart"></i> new friends!</h2>
-            <ul class="list-inline list-social">
-                <li class="social-twitter">
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                </li>
-                <li class="social-facebook">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                </li>
-                <li class="social-google-plus">
-                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                </li>
-            </ul>
-        </div>
-    </section>
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2016 Start Bootstrap. All Rights Reserved.</p>
-            <ul class="list-inline">
-                <li>
-                    <a href="#">Privacy</a>
-                </li>
-                <li>
-                    <a href="#">Terms</a>
-                </li>
-                <li>
-                    <a href="#">FAQ</a>
-                </li>
-            </ul>
-        </div>
-    </footer>
-
-    <!-- jQuery -->
-    <script src="lib/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-    <!-- Theme JavaScript -->
-    <script src="js/new-age.min.js"></script>
-
-</body>
-
+  </body>
 </html>
