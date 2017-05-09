@@ -127,6 +127,7 @@ public class Orar implements Serializable{
 		this.oraSfarsit = oraSfarsit;
 		this.materie = materie;
 	}
+	
 	protected Orar(){
 		
 	}

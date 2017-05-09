@@ -20,7 +20,7 @@ public class Users implements Serializable{
 	@Column(name="user_id")
 	private long userID;
 	
-	@Column(name="useranme")
+	@Column(name="username")
 	private String username;
 	
 	@Column(name="password")
@@ -69,6 +69,10 @@ public class Users implements Serializable{
 		this.userRole = userRole;
 	}
 
+	protected Users(){
+		
+	}
+	
 	@Override
 	public String toString() {
 		return "Users [userID=" + userID + ", username=" + username + ", password=" + password + ", userRole="
