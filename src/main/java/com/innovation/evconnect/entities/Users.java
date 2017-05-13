@@ -1,48 +1,41 @@
 package com.innovation.evconnect.entities;
 
-import java.io.Serializable;
 
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
-@Table(name = "users")
-public class Users implements Serializable{
+public class Users implements Serializable {
 
-	private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = -4922248200054286997L;
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="user_id")
-	private long userID;
-	
-	@Column(name="username")
-	private String username;
-	
-	@Column(name="password")
+	@Column(name = "username")
+	private String userName;
 	private String password;
-	
-	@Column(name="user_role")
-	private String userRole;
+	private Boolean enabled;
 
-	public long getUserID() {
-		return userID;
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "username")
+	private List<Authorities> authorities;
+
+	public Users() {
+		super();
 	}
 
-	public void setUserID(long userID) {
-		this.userID = userID;
+	public String getUserName() {
+		return userName;
 	}
 
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getPassword() {
@@ -53,29 +46,68 @@ public class Users implements Serializable{
 		this.password = password;
 	}
 
-	public String getUserRole() {
-		return userRole;
+	public Boolean getEnabled() {
+		return enabled;
 	}
 
-	public void setUserRole(String userRole) {
-		this.userRole = userRole;
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
 	}
 
-	public Users(long userID, String username, String password, String userRole) {
-		super();
-		this.userID = userID;
-		this.username = username;
-		this.password = password;
-		this.userRole = userRole;
+	public List<Authorities> getAuthorities() {
+		return authorities;
 	}
 
-	protected Users(){
-		
+	public void setAuthorities(List<Authorities> authorities) {
+		this.authorities = authorities;
 	}
-	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((authorities == null) ? 0 : authorities.hashCode());
+		result = prime * result + ((enabled == null) ? 0 : enabled.hashCode());
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Users other = (Users) obj;
+		if (authorities == null) {
+			if (other.authorities != null)
+				return false;
+		} else if (!authorities.equals(other.authorities))
+			return false;
+		if (enabled == null) {
+			if (other.enabled != null)
+				return false;
+		} else if (!enabled.equals(other.enabled))
+			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
+			return false;
+		if (userName == null) {
+			if (other.userName != null)
+				return false;
+		} else if (!userName.equals(other.userName))
+			return false;
+		return true;
+	}
+
 	@Override
 	public String toString() {
-		return "Users [userID=" + userID + ", username=" + username + ", password=" + password + ", userRole="
-				+ userRole + "]";
+		return "Users [userName=" + userName + ", password=" + password + ", enabled=" + enabled + "]";
 	}
+
 }
