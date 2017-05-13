@@ -12,8 +12,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.evconnect.security.JWTAuthenticationFilter;
-import com.evconnect.security.JWTLoginFilter;
+import com.innovation.evconnect.security.JWTAuthenticationFilter;
+import com.innovation.evconnect.security.JWTLoginFilter;
+
+import groovyjarjarasm.asm.commons.Method;
 
 
 @Configuration
@@ -30,7 +32,8 @@ public class EvSecurityConfig extends WebSecurityConfigurerAdapter {
 		// disable csrf for our requests.
 		http.csrf().disable().authorizeRequests()
 				// allow the request to get to login service
-				.antMatchers(HttpMethod.POST, "/login", "/signup").permitAll()
+				//.antMatchers(HttpMethod.POST, "/login", "/signup").permitAll()
+				  .antMatchers(HttpMethod.GET, "/dummy", "/").permitAll()
 				// enforce security for the rest of the calls
 				.anyRequest().authenticated().and()
 				// filter the api/login requests
