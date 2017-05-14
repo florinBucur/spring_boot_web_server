@@ -31,7 +31,7 @@ public class EvSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.csrf().disable().authorizeRequests()
 				// allow the request to get to login service
 				  .antMatchers(HttpMethod.POST, "/login", "/signup").permitAll()
-				  .antMatchers(HttpMethod.GET, "/", "/js/**", "/css/**", "/fonts/**", "/images/**").permitAll()
+				  .antMatchers(HttpMethod.GET, "/", "/js/**", "/materialize/**", "/style/**", "/images/**").permitAll()
 				// enforce security for the rest of the calls
 				.anyRequest().authenticated().and()
 				// filter the api/login requests
