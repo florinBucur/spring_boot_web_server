@@ -30,6 +30,7 @@ public class SignupController {
 		user.setUserName(userBean.getEmail());
 		user.setPassword(userBean.getPassword());
 		user.setEnabled(Boolean.TRUE);
+		System.out.println(user);
 		Authorities authority = new Authorities();
 		authority.setId(new AuthoritiesId(user.getUserName(), "user"));
 		List<Authorities> auths = new ArrayList<>();
