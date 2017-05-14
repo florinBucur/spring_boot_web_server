@@ -1,168 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Starter Template - Materialize</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>evConnect</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://file.myfontastic.com/TzBPmHC5AkVxduNCj3C7zd/icons.css" rel="stylesheet">
+  <link href="materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="style/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
+
 <body>
-  <nav id="nav" class="transparent" role="navigation">
+  <nav id="nav" class="transparent" role="navigation" style="z-index:1000">
     <div class="nav-wrapper row">
-        <a href="#" data-activates="nav-mobile" style="position:absolute;" class="button-collapse"><i class="material-icons">menu</i></a>
+      <a href="#" data-activates="nav-mobile" style="position:absolute;" class="button-collapse"><i class="material-icons">menu</i></a>
 
-        <a id="logo-container" href="#" class="left col s4 m4 offset-s4 offset-m4 valign-wrapper hide-on-large-only">
-            <div class="center">
-                <img src="images/11.png" style="positon:absolute; width:100%; height:100%; valign">
-            </div>
-        </a>
+      <a id="logo-container" href="#" class="left col s4 m4 offset-s4 offset-m4 valign-wrapper hide-on-large-only">
+        <div class="center">
+          <img src="images/logo_mic.png" style="positon:absolute; width:100%; height:100%; valign">
+        </div>
+      </a>
 
-        <a id="logo-container" href="#" class="left col offset-s1 offset-l1 offset-m1 s8 l4 m4 valign-wrapper hide-on-med-and-down">
-            <div class="hide-on-med-and-down center">
-                <img src="images/11.png" style="height:30px; margin-top:20px;">
-            </div>
-        </a>
+      <a id="logo-container" href="#" class="left col offset-s1 offset-l1 offset-m1 s8 l4 m4 valign-wrapper hide-on-med-and-down">
+        <div class="hide-on-med-and-down center">
+          <img src="images/logo_mic.png" style="height:30px; margin-top:20px;">
+        </div>
+      </a>
 
       <ul class="right hide-on-med-and-down">
-        <li><a href="#institutions">Institutions</a></li>
+        <li><a href="#parteners">Parteners</a></li>
         <li><a href="#clients">Clients</a></li>
         <li><a href="#app">App</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#team">Team</a></li>
         <li><a href="#signup">Sign up</a></li>
+        <li><a href="#login">Login</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-          <li><a href="#institutions">Institutions</a></li>
-          <li><a href="#clients">Clients</a></li>
-          <li><a href="#app">App</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#signup">Sign up</a></li>
+        <li><a href="#parteners">Parteners</a></li>
+        <li><a href="#clients">Clients</a></li>
+        <li><a href="#app">App</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#signup">Sign up</a></li>
+        <li><a href="#login">Login</a></li>
       </ul>
     </div>
   </nav>
 
   <div class="no-pad-bot no-margin full-page valign-wrapper row" id="index-banner">
-      <img src="images/10.png" class="col s10 m6 l6 offset-s1 offset-m3 offset-l3">
+    <div class="col s10 m6 l6 offset-s1 offset-m3 offset-l3 valign-wrapper">
+      <img src="images/logo.png" class="centerImage" style="max-height:170px;">
+    </div>
+    <a href="#about">
+      <div class="arrow-down"></div>
+    </a>
   </div>
 
 
-  <section class="row full-page scrollspy grey lighten-2" id="about">
-    <div class="col s12 m6 l6 full-page valign-wrapper" style="padding:0">
-        <div class="container valign center grey-text darken-3">
-            <h3>About evConnect</h3>
-            <br>
-           		We are evConnect!
-        </div>
-    </div>
-    <div class="col s12 m6 l6 full-page" style="padding:0;">
-        <div class="carousel carousel-slider full-page">
-            <a class="carousel-item full-page" href="#one!"><div class="full-page" style="background: url(images/rectorat.jpg) 50% 50%; background-size:cover;"></div></a>
-            <a class="carousel-item full-page" href="#two!"><div class="full-page" style="background: url(images/bib.jpg) 50% 50%; background-size:cover;"></div></a>
-            <a class="carousel-item full-page" href="#three!"><div class="full-page" style="background: url(images/acs.png) 50% 50%; background-size:cover;"></div></a>
-        </div>
-    </div>
-  </section>
+  <section class="row full-page scrollspy grey lighten-4" id="about">
+    <br><br>
+    <h2 class="center-align greyish-text">About</h2>
 
-  <section class="full-page scrollspy grey lighten-4 no-margin valign-wrapper" id="institutions">
-      <div class="container center row grey-text darken-3 valign">
-          <br>
-          <h3>Institutions</h3>
-          <div class="valign-wrapper">
-              <img src="images/acs.png" class="col s12 m12 l12 responsive-img" >
-          </div>
-          <br>
+    <p class="col s10 m10 l10 offset-s1 offset-m1 offset-l1 flow-text center-justified">
+      EvConnect is a marketing place customized for all the public institutions from Bucharest that want to host events at University Politehnica of Bucharest.
+      <br>
 
-          <div class="row">
-              <div class="col s12 m4 l4">
-                  <div class="col s1 m1 l1"><i class="material-icons">ic_perm_identity</i></div>
-                  <div class="col s11 m11 l11">TEST</div>
-              </div>
-              <div class="col s12 m4 l4">
-                  <div class="col s1 m1 l1"><i class="material-icons">ic_perm_identity</i></div>
-                  <div class="col s11 m11 l11">TEST</div>
-              </div>
+    </p>
 
-              <div class="col s12 m4 l4">
-                  <div class="col s1 m1 l1"><i class="material-icons">ic_perm_identity</i></div>
-                  <div class="col s11 m11 l11">TEST</div>
-              </div>
-          </div>
-      </div>
-  </section>
 
-  <section class="row full-page scrollspy grey lighten-2" id="clients">
+    <div class="col l10 m10 s10 offset-s1 offset-m1 offset-l1">
       <br><br>
-        <div class="container center grey-text darken-3">
-            <h3>Clients</h3>
+      <div class="col s12 m3 l3">
+        <div class="icon-block">
+          <h2 class="center light-blue-text">
+            <img src="images/solution.svg" style="width:9vh;">
+          </h2>
+          <p class="light center-align">A website for the clients, firms or institutions, with all the informations regarding the available spaces, capacity, surface and tehnology. The users will find out about the upcoming events through the mobile app.</p>
         </div>
+      </div>
+      <div class="col s12 m3 l3">
+        <div class="icon-block">
+          <h2 class="center light-blue-text">
+            <img src="images/goal.svg" style="width:9vh;">
+          </h2>
+          <p class="light center-align">To make easier the process of booking a space in order to organize an event, discarding all the papers, calls, wasted time and the exhausting demarche.</p>
+        </div>
+      </div>
+      <div class="col s12 m3 l3">
+        <div class="icon-block">
+          <h2 class="center light-blue-text">
+            <img src="images/idea.svg" style="width:9vh;">
+          </h2>
+          <p class="light center-align">As a student, you will discover about all the events hosted at the partner institutions through a mobile app. As a firm, we offer a relievable process in booking a space aiming to organize an event on different topics.</p>
+        </div>
+      </div>
+      <div class="col s12 m3 l3">
+        <div class="icon-block">
+          <h2 class="center light-blue-text">
+            <img src="images/hoomans.svg" style="width:9vh;">
+          </h2>
+          <p class="light center-align">Our product is a pain killer for the firms and institutions, being the first marketing in order to hire an area to organize events. Also, we are a vitamine for the mobile app users, offering them a structured planification of upcoming events.
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+  <section class="row full-page scrollspy grey lighten-2" id="parteners">
+    <div class="col s12 m6 l6 full-page valign-wrapper" style="padding:0">
+      <div class="container valign center grey-text darken-3">
+        <h2 class="center-align greyish-text">Parteners</h2>
+        <p class="flow-text">We allready have a partenership with University Politehnica of Bucharest to implement our product and we plan to have it fully running and integrated with it’s systems in the next month. You book, we connect, they attend.</p>
+        <p class="flow-text">At the moment, events can be hosted in 3 different places in the campus: Faculty of Automatics and Computer Science, UPB Library and Rectorat. We intend to increase the number of partnerships and we are opened to several tie-ups.</p>
+      </div>
+    </div>
+
+    <div class="col s12 m6 l6 full-page" style="padding:0;">
+      <div class="carousel carousel-slider full-page">
+        <a class="carousel-item full-page" href="#one!">
+          <div class="full-page" style="background: url(images/rectorat.jpg) 50% 50%; background-size:cover;"></div>
+        </a>
+        <a class="carousel-item full-page" href="#two!">
+          <div class="full-page" style="background: url(images/bib.jpg) 50% 50%; background-size:cover;"></div>
+        </a>
+        <a class="carousel-item full-page" href="#three!">
+          <div class="full-page" style="background: url(images/acs.png) 50% 50%; background-size:cover;"></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="row full-page scrollspy grey lighten-4 valign-wrapper" id="clients">
+
+    <img src="images/laptop.png" class="col s12 m5 l5 offset-l1 offset-m1 valign hide-on-small-only" style="padding:0;">
+
+
+    <div class="col s10 m4 l4 offset-l1 offset-m1 offset-s1 full-page right grey-text darken-3">
+      <br><br><br><br> <br><br><br><br>
+      <h1 class="left-align greyish-text">Clients</h1><br>
+      <p class="flow-text">Our products is tailored to your needs in order to organize events. Through us, the process of booking a space is more easier.</p>
+
+      <ul class="flow-text">
+        All you have to do is:
+        <li>
+          <i class="material-icons" style="color: #116c5e; font-weight: 900;">check</i>Sign up on our platform
+        </li>
+        <li>
+          <i class="material-icons" style="color: #116c5e; font-weight: 900;">check</i>Fill in the form with all the informations
+        </li>
+      </ul>
+    </div>
   </section>
 
   <section class="row full-page scrollspy grey lighten-4" id="app">
-    <div class="col s12 m6 l6 full-page valign-wrapper" style="padding:0">
-        <div class="container valign center grey-text darken-3">
-            <h3>Download the app</h3>
-            <br>
-            teeeeext
-            <br><br><br>
-            <img class="col s12 m12 l12" src="images/google-play-button.png">
-        </div>
-    </div>
-    <div class="col s12 m6 l6 full-page center valign-wrapper" style="padding:0;">
-        <img src="images/phone.png" class="responsive-img valign center">
-    </div>
-  </section>
-
-  <section class="row full-page scrollspy grey lighten-2" id="clients">
+    <br><br>
+    <div class="col s6 m7 l5 offset-s1 offset-m1 offset-l1 valign center grey-text darken-3">
+      <br><br><br><br>
+      <h4 class="left-align greyish-text">Download the app</h4>
       <br><br>
-        <div class="container center grey-text darken-3">
-            <h3>The Team</h3>
-        </div>
-        <div class="row">
-            <div class="row">
-                <div class="person">
-                    <img src="images/1.jpg">
-                </div>
-                <div class="person">
-                    <img src="images/2.png">
-                </div>
-                <div class="person">
-                    <img src="images/3.png">
-                </div>
-            </div>
-            <div class="right">
-                <div class="person">
-                    <img src="images/4.png">
-                </div>
-                <div class="person">
-                    <img src="images/5.png">
-                </div>
-                <div class="person">
-                    <img src="images/6.png">
-                </div>
-            </div>
-        </div>
+      <p class="flow-text left-align">Discover about all the events hosted at the partner institutions through the mobile app.</p>
+      <br><br>
+      <p class="flow-text left-align" style="position:relative;">Available soon on: <img style="height:3.5em; margin:0;" align="middle" src="images/google-play-button.png">
+    </div>
+    <div class="col s5 m4 l5 offset-l1 full-page center valign-wrapper" style="padding:0; overflow:hidden;">
+      <img src="images/phone.png" class="valign-bottom" style="height:90vh;">
+    </div>
   </section>
 
-  <footer class="row page-footer no-margin valign-wrapper hide-on-med-and-up" style="background-color: rgb(33, 33, 33); padding: 10px 0 10px 0;">
-          <img src="images/11.png" class="col s9 valign">
-          <img src="images/icon.png" class="col s3 valign">
-  </footer>
+  <section class="row full-page scrollspy grey lighten-2" id="team">
+    <br><br>
 
-  <footer class="row page-footer no-margin valign-wrapper hide-on-small-only" style="background-color: rgb(33, 33, 33); padding: 10px 0 10px 0; position:relative;">
-          <img src="images/11.png" class="col m3 l3 valign">
-          <div class="col m6 l6"></div>
-          <img src="images/icon.png" class="valign right" style="height:5vh;margin-right:50px;">
+    <div class="col s1 m1 l1 full-page valign-wrapper" style="position:relative;">
+      <div class="arrow-left valign" id="team-prev"></div>
+    </div>
+
+    <div class="col s10 m10 l10 valign-wrapper full-page">
+
+      <img src="images/adriancoman.png" class="col s12 m6 l6 valign hide-on-small-only" style="padding:5%; margin:-5%;" id="big-image">
+
+      <div class="col s12 m10 l10" style="position:relative; margin-top:-125px">
+
+        <div class="col s12 m12 l12">
+          <div class="row">
+            <h2 class="center-align greyish-text">The Team</h2><br>
+            <div class="col s2 m2 l2 offset-l1 offset-m1 offset-s1 no-padding">
+              <img src="images/anamariamargeruseanu.png" class="person-round" id="img0">
+            </div>
+            <div class="col s2 m2 l2 no-padding">
+              <img src="images/andradaraducanu.png" class="person-round" id="img1">
+            </div>
+            <div class="col s2 m2 l2 no-padding">
+              <img src="images/florinbucur.png" class="person-round" id="img2">
+            </div>
+            <div class="col s2 m2 l2 no-padding">
+              <img src="images/andreimaracineanu.png" class="person-round" id="img3">
+            </div>
+            <div class="col s2 m2 l2 no-padding">
+              <img src="images/mihailupea.png" class="person-round" id="img4">
+            </div>
+          </div>
+
+          <div class="col s10 m10 l10  offset-s1 offset-m1 offset-l1">
+            <h4 style="font-weight:500; color: #116c5e;" id="name">Coman Adrian-Ioan</h4>
+            <h5 style="font-weight:300; margin-top:-10px; color: #3b8d80;" id="ocupation">CTO - Backend Developer</h5>
+            <p style="flow-text overflow:visible; height: 0;" id="description">Adrian is passionate in software, as a student in the third year at Computer Science. He has a lot experience in back-end development and every deadline in coding is converted in a great success for him and also for the teams in which Adrian
+              enjoys to work. He has all the qualities to be our CTO.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s1 m1 l1 full-page valign-wrapper" style="transform:rotateZ(180deg); ">
+      <div class="arrow-left valign" id="team-next"></div>
+    </div>
+
+  </section>
+
+
+  <footer class="row page-footer no-margin valign-wrapper " style="background-color: #244b45; padding: 10px 0 10px 0; position:relative;">
+    <a href="mailto:evconnect@gmail.com" class="col offset-s7 offset-m9 offset-l9"><img src="images/mail.png" class="valign responsive-img" style="height:3vh; margin-right:50px;"></a>
+    <a href="https://www.facebook.com/evconnect2017" target="blank" class="col" style="margin-right:50px;"><img src="images/facebook.png" class="valign responsive-img" style="height:3vh;"></a>
   </footer>
 
 
   <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
+  <script src="materialize/js/materialize.min.js "></script>
+  <script src="js/main.js "></script>
 
-  </body>
+</body>
+
 </html>
