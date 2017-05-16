@@ -39,10 +39,9 @@
         type: "POST",
         method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Request-Headers': 'x-requested-with'
+          'Content-Type': 'application/json'
         },
-        url: 'http://192.168.0.113:8080/evconnect/signup',
+        url: 'https://192.168.0.113:8443/evconnect/signup',
         data: JSON.stringify({
           "email": $("#email").val(),
           "password": $("#password").val(),
