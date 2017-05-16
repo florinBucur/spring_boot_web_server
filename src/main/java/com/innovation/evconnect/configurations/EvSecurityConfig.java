@@ -20,8 +20,8 @@ import com.innovation.evconnect.security.JWTLoginFilter;
 @EnableWebSecurity(debug = false)
 public class EvSecurityConfig extends WebSecurityConfigurerAdapter {
 
-	 @Autowired
-	 private DataSource dataSource;
+	@Autowired
+	private DataSource dataSource;
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -29,17 +29,17 @@ public class EvSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.headers().cacheControl();
 		// disable csrf for our requests.
 		http.csrf().disable().authorizeRequests()
-				// allow the request to get to login service
-				  .antMatchers(HttpMethod.POST, "/login", "/signup").permitAll()
-				  .antMatchers(HttpMethod.GET, "/", "/js/**", "/materialize/**", "/style/**", "/images/**").permitAll()
-				// enforce security for the rest of the calls
-				.anyRequest().authenticated().and()
-				// filter the api/login requests
-				.addFilterBefore(new JWTLoginFilter("/login", authenticationManager()),
-						UsernamePasswordAuthenticationFilter.class)
-				// And filter other requests to check the presence of JWT in
-				// header
-				.addFilterBefore(new JWTAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+		// allow the request to get to login service
+		.antMatchers(HttpMethod.POST, "/login", "/signup").permitAll()
+		.antMatchers(HttpMethod.GET, "/", "/js/**", "/materialize/**", "/style/**", "/images/**").permitAll()
+		// enforce security for the rest of the calls
+		.anyRequest().authenticated().and()
+		// filter the api/login requests
+		.addFilterBefore(new JWTLoginFilter("/login", authenticationManager()),
+				UsernamePasswordAuthenticationFilter.class)
+		// And filter other requests to check the presence of JWT in
+		// header
+		.addFilterBefore(new JWTAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
 	}
 
 	@Override
@@ -49,5 +49,4 @@ public class EvSecurityConfig extends WebSecurityConfigurerAdapter {
 		auth.jdbcAuthentication().dataSource(dataSource).passwordEncoder(new BCryptPasswordEncoder(12));
 
 	}
-
 }
