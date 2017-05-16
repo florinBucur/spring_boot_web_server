@@ -6,6 +6,7 @@ import com.innovation.evconnect.serializer.BCryptPasswordDeserializer;
 public class UserBean {
 	
 	private String email;
+	private String role;
 	
 	@JsonDeserialize(using = BCryptPasswordDeserializer.class)
 	private String password;
@@ -59,6 +60,14 @@ public class UserBean {
 		} else if (!password.equals(other.password))
 			return false;
 		return true;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 	
 	

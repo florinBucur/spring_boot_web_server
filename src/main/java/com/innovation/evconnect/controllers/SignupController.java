@@ -32,7 +32,7 @@ public class SignupController {
 		user.setEnabled(Boolean.TRUE);
 		System.out.println(user);
 		Authorities authority = new Authorities();
-		authority.setId(new AuthoritiesId(user.getUserName(), "user"));
+		authority.setId(new AuthoritiesId(user.getUserName(), userBean.getRole()));
 		List<Authorities> auths = new ArrayList<>();
 		auths.add(authority);
 		user.setAuthorities(auths);
