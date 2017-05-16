@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -21,13 +22,34 @@ public class Users implements Serializable {
 	private String userName;
 	private String password;
 	private Boolean enabled;
+	private String location;
 
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "username")
 	private List<Authorities> authorities;
+	
+	@OneToMany(fetch = FetchType.LAZY)
+	@JoinColumn(name = "user")
+	private List<Reserved> reserved;
+
+	public List<Reserved> getReserved() {
+		return reserved;
+	}
+
+	public void setReserved(List<Reserved> reserved) {
+		this.reserved = reserved;
+	}
 
 	public Users() {
 		super();
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
 	}
 
 	public String getUserName() {
@@ -68,6 +90,7 @@ public class Users implements Serializable {
 		int result = 1;
 		result = prime * result + ((authorities == null) ? 0 : authorities.hashCode());
 		result = prime * result + ((enabled == null) ? 0 : enabled.hashCode());
+		result = prime * result + ((location == null) ? 0 : location.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
 		return result;
@@ -92,6 +115,11 @@ public class Users implements Serializable {
 				return false;
 		} else if (!enabled.equals(other.enabled))
 			return false;
+		if (location == null) {
+			if (other.location != null)
+				return false;
+		} else if (!location.equals(other.location))
+			return false;
 		if (password == null) {
 			if (other.password != null)
 				return false;
@@ -107,7 +135,7 @@ public class Users implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Users [userName=" + userName + ", password=" + password + ", enabled=" + enabled + "]";
+		return "Users [userName=" + userName + ", password=" + password + ", enabled=" + enabled + ", location="
+				+ location + ", authorities=" + authorities + "]";
 	}
-
 }
