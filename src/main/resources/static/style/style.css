@@ -17,10 +17,6 @@
   font-size: inherit;
 }
 
-* {
-  color: #616161;
-}
-
 nav {
   position: fixed;
   z-index: 100;

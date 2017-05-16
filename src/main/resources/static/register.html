@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>evConnect</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://file.myfontastic.com/TzBPmHC5AkVxduNCj3C7zd/icons.css" rel="stylesheet">
+  <link href="materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="style/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="style/style-register.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+  <nav id="nav" class="transparent" role="navigation" style="z-index:1000">
+    <div class="nav-wrapper row">
+      <a href="#" data-activates="nav-mobile" style="position:absolute;" class="button-collapse"><i class="material-icons">menu</i></a>
+
+      <a id="logo-container" href="#" class="left col offset-s1 offset-l1 offset-m1 s8 l4 m4 valign-wrapper hide-on-med-and-down">
+        <div class="hide-on-med-and-down center">
+          <img src="images/logo_mic.png" style="height:30px; margin-top:20px;">
+        </div>
+      </a>
+
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="register.html">Sign up</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="row no-pad-bot no-margin full-page valign-wrapper" id="register-banner">
+    <table class="col s10 m6 l6 offset-s1 offset-m3 offset-l3">
+      <tr>
+        <td>
+          <div class=" offset-l3 valign-wrapper">
+            <img src="images/logo.png" class="centerImage" style="max-height:170px;">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align:center;">
+          <h3 style="color: 2F302F; font-weight:300;">Become our:</h3>
+          <a href="#page2">
+            <button class="col s5 m4 l4 flow-text" id="partener">
+            Partener
+            </button>
+          </a>
+          <a href="#page2">
+            <button class="col s5 m4 l4 offset-s2 offset-m4 offset-l4 flow-text" id="client">
+              Client
+            </button>
+          </a>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+  <section class="row full-page scrollspy grey lighten-4" id="page2">
+    <br><br>
+    <div class="col s6 m4 l4 offset-s1 offset-m1 offset-l1 valign center grey-text darken-3">
+      <br><br><br><br>
+      <h3 class="left-align greyish-text" id="become">Become a</h3>
+      <p class="flow-text left-align" style="font-family:Roboto; font-weight:300;">Discover about all the events hosted at the partner institutions through the mobile app.</p>
+      <br><br>
+      <form method="post" action="register" id="register">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email" data-error="Wrong email format." data-success="">Email</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate">
+          <label for="email">Password</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="submit" type="submit" class="btn">
+        </div>
+      </form>
+    </div>
+    <div class="col s5 m7 l7 full-page center valign-wrapper" style="padding:0; overflow:hidden;">
+      <img src="images/register_login/laptop.png" class="valign" style="height:90vh; position:absolute;">
+    </div>
+  </section>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
+  <script src="materialize/js/materialize.min.js "></script>
+  <script src="js/main.js "></script>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+#register-banner {
+  background: url(../images/register_login/register-bg.png) 50% 50%;
+  background-size: cover;
+}
+
+table, td, tr {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  padding: 20px !important;
+  background-color: transparent;
+  display: block;
+  border: 1px solid black;
+  border-radius: 3000px;
+}
+
+body {
+  overflow: hidden;
+}
+
+nav {
+  position: absolute;
+  z-index: 100;
+  height: 70px;
+  transition: all 0.2s;
+  box-shadow: none;
+  font-family: 'Raleway', sans-serif;
+  line-height: 70px;
+}
+
+#step2 {
+  background-color: #e1e1e1;
+}
