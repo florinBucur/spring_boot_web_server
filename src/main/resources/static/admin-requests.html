@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>evConnect</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://file.myfontastic.com/TzBPmHC5AkVxduNCj3C7zd/icons.css" rel="stylesheet">
+  <link href="materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="style/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="style/style-account.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+  <nav id="nav" class="transparent" role="navigation" style="z-index:1000">
+    <div class="nav-wrapper row">
+      <a href="#" data-activates="nav-mobile" style="position:absolute;" class="button-collapse"><i class="material-icons">menu</i></a>
+
+      <a id="logo-container" href="#" class="left col offset-s1 offset-l1 offset-m1 s8 l4 m4 valign-wrapper hide-on-med-and-down">
+        <div class="hide-on-med-and-down center">
+          <img src="images/register_login/logo.png" style="height:30px; margin-top:20px;">
+        </div>
+      </a>
+
+      <ul class="right hide-on-med-and-down">
+        <li><a href="admin-home.html">Halls</a></li>
+        <li><a href="auth.html">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <form method="post" action="login" id="login">
+
+    <section class="row no-pad-bot no-margin full-page valign-wrapper" id="login-banner">
+      <table>
+        <tr>
+          <td>
+            <h4 class="col s12 m12 l12 center">University Politehnica of Bucharest</h2>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h5 class="center" style="color:#616161">Faculty of Automatic control and Computer Science</h3>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <ul class="col s12 m8 l8 offset-m2 offset-l2 collapsible popout flow-text" style="padding:0;" data-collapsible="accordion">
+              <li>
+                <div class="collapsible-header">EC101</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                <div class="badge"><span style="flow-text">5</span></div>
+              </li>
+              <li>
+                <div class="collapsible-header active"><i class="material-icons">add</i> EB101</div>
+                <div class="collapsible-body">
+                  <form>
+                    <div class="row">
+                      <div class="col s12 m12 l12">
+                        <div class="card whiteish darken-1">
+                          <div class="card-content white-text">
+                            <div class="row black-text">
+                              <p class="flow-text">Rand1</p>
+                              <p class="flow-text">Rand1</p>
+                              <p class="flow-text">Rand1</p>
+                              <p class="flow-text">Rand1</p>
+                            </div>
+                          </div>
+                          <div class="card-action">
+                            <a href="#"><input type="submit" value="Accept" class="btn transparent black-text"></a>
+                            <a href="#"><input type="submit" value="Deny" class="btn transparent black-text"></a>
+                          </div>
+                        </div>
+                      </div>
+                  </form>
+                  </div>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+
+    </section>
+  </form>
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
+  <script src="materialize/js/materialize.min.js "></script>
+  <script src="js/login.js "></script>
+
+</body>
+
+</html>

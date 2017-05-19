@@ -22,6 +22,11 @@ public class Authorities implements Serializable{
 		return id;
 	}
 
+	@Override
+	public String toString() {
+		return "Authorities [id=" + id + "]";
+	}
+
 	public void setId(AuthoritiesId id) {
 		this.id = id;
 	}

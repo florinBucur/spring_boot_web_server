@@ -1,6 +1,12 @@
 #register-banner {
   background: url(../images/register_login/register-bg.png) 50% 50%;
   background-size: cover;
+  color: #333332;
+}
+
+#login-banner {
+  background: url(../images/register_login/bg.png) 50% 50%;
+  background-size: cover;
 }
 
 table, td, tr {
@@ -9,15 +15,21 @@ table, td, tr {
 }
 
 button {
-  padding: 20px !important;
+  margin-top: 20px;
+  padding: 10px !important;
   background-color: transparent;
   display: block;
-  border: 1px solid black;
+  border: 1px solid #333332;
   border-radius: 3000px;
+  transition: all .25s;
+}
+
+a>button:hover {
+  background-color: rgba(0, 0, 0, 0.1) !important;
 }
 
 body {
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 nav {
@@ -32,4 +44,33 @@ nav {
 
 #step2 {
   background-color: #e1e1e1;
+}
+
+.email-box-login {
+  width: 183px !important;
+  height: 51px !important;
+  padding-left: 60px !important;
+  padding-right: 40px !important;
+  background: url(../images/register_login/box1.png);
+  background-size: 283px 51px;
+  margin: 0;
+}
+
+.password-box-login {
+  width: 183px !important;
+  height: 51px !important;
+  padding-left: 60px !important;
+  padding-right: 40px !important;
+  background: url(../images/register_login/box2.png);
+  background-size: 283px 51px;
+  margin: 0;
+}
+
+.submit-box-login {
+  width: 165px !important;
+  height: 37px !important;
+  background: url(../images/register_login/login.png);
+  background-size: 165px 37px;
+  border: none;
+  margin: 0;
 }

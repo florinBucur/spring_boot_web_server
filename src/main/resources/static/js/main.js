@@ -39,20 +39,24 @@
         type: "POST",
         method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        url: 'https://192.168.0.113:8443/evconnect/signup',
+        url: 'https://141.85.224.158:8443/evconnect/signup',
         data: JSON.stringify({
           "email": $("#email").val(),
           "password": $("#password").val(),
-          "role": type
+          "role": type,
+	  "location":"UPB"
         }),
 
         success: function(result) {
-          console.log("daaa");
+          Materialize.toast('Account successfully created. Please wait...', 3000); // 3000 is the duration of the toast
+          setTimeout(function() {
+            window.location.replace(data.replace("\"", "").replace("\"", "") + "-home.html");
+          }, 4000); //will call the function after 2 secs.
         },
         error: function(result) {
-          console.log("ERR: " + result);
+          Materialize.toast('Register failed.', 3000);
         },
         dataType: "json"
       });

@@ -1,0 +1,55 @@
+#login-banner {
+  background: #e1e1e1;
+}
+
+ul.collapsible li {
+  background: rgb(252, 252, 252);
+  position: relative;
+}
+
+.whiteish {
+  background: rgb(252, 252, 252);
+  margin: 0;
+  padding: 0;
+  box-shadow: none !important;
+}
+
+table, td, tr {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: Roboto;
+  font-weight: 300;
+}
+
+nav {
+  color: #333332 !important;
+}
+
+input {
+  color: #333332;
+}
+
+a {
+  color: #333332 !important;
+}
+
+.badge {
+  position: absolute;
+  border-radius: 1000px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  right: -15px;
+  top: -15px;
+  width: 30px;
+  height: 30px;
+  background-color: #333332;
+  color: #e1e1e1;
+}
+
+.hidden {
+  display: none;
+}

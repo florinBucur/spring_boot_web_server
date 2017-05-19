@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.google.gson.Gson;
 import com.innovation.evconnect.bos.MessageBean;
 import com.innovation.evconnect.bos.UserBean;
 import com.innovation.evconnect.entities.Authorities;
@@ -29,6 +30,7 @@ public class SignupController {
 		Users user = new Users();
 		user.setUserName(userBean.getEmail());
 		user.setPassword(userBean.getPassword());
+		user.setLocation(userBean.getLocation());
 		user.setEnabled(Boolean.TRUE);
 		System.out.println(user);
 		Authorities authority = new Authorities();
@@ -37,7 +39,28 @@ public class SignupController {
 		auths.add(authority);
 		user.setAuthorities(auths);
 		userRepository.save(user);
-		return new ResponseEntity<MessageBean>(new MessageBean("User Created !!!"), HttpStatus.OK);
+//		return new ResponseEntity<MessageBean>(new MessageBean("User Created !!!"), HttpStatus.OK);
+		return new ResponseEntity<>(HttpStatus.OK);
 	}
-
+	
+	@PostMapping(value = "/logg")
+	public ResponseEntity<String> logg(@RequestBody UserBean username) {
+		Iterable<Users> users = userRepository.findAll();
+		String usr = username.getEmail().trim();
+		String res = "";
+		List<Authorities> result = null;
+		for(Users u : users){
+			if(u.getUserName().trim().contentEquals(usr)){
+				 result = u.getAuthorities();
+				 if(result.toString().toLowerCase().contains("admin"))
+					res = "admin";
+				 else 
+					 res = "client";
+		}
+		}
+		Gson g = new Gson();
+		
+		return new ResponseEntity<>(g.toJson(res),HttpStatus.OK);
+	}
+	
 }

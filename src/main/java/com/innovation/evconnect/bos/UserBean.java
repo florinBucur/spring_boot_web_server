@@ -7,6 +7,7 @@ public class UserBean {
 	
 	private String email;
 	private String role;
+	private String location;
 	
 	@JsonDeserialize(using = BCryptPasswordDeserializer.class)
 	private String password;
@@ -68,6 +69,14 @@ public class UserBean {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
 	}
 	
 	

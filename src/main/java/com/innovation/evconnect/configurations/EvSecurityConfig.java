@@ -15,7 +15,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.innovation.evconnect.security.JWTAuthenticationFilter;
 import com.innovation.evconnect.security.JWTLoginFilter;
 
-
 @Configuration
 @EnableWebSecurity(debug = false)
 public class EvSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -29,17 +28,19 @@ public class EvSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.headers().cacheControl();
 		// disable csrf for our requests.
 		http.csrf().disable().authorizeRequests()
-		// allow the request to get to login service
-		.antMatchers(HttpMethod.POST, "/login", "/signup").permitAll()
-		.antMatchers(HttpMethod.GET, "/", "/register.html", "/js/**", "/materialize/**", "/style/**", "/images/**").permitAll()
-		// enforce security for the rest of the calls
-		.anyRequest().authenticated().and()
-		// filter the api/login requests
-		.addFilterBefore(new JWTLoginFilter("/login", authenticationManager()),
-				UsernamePasswordAuthenticationFilter.class)
-		// And filter other requests to check the presence of JWT in
-		// header
-		.addFilterBefore(new JWTAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+				// allow the request to get to login service
+				.antMatchers(HttpMethod.POST, "/login", "/signup","/logg").permitAll()
+				.antMatchers(HttpMethod.GET, "/","/client-home.html","/admin-home.html","/admin-requests.html","/createRoom","/auth.html", "/register.html", "/locations","/js/**", "/materialize/**",
+						"/style/**", "/images/**", "/dist/**")
+				.permitAll()
+				// enforce security for the rest of the calls
+				.anyRequest().authenticated().and()
+				// filter the api/login requests
+				.addFilterBefore(new JWTLoginFilter("/login", authenticationManager()),
+						UsernamePasswordAuthenticationFilter.class)
+				// And filter other requests to check the presence of JWT in
+				// header
+				.addFilterBefore(new JWTAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
 	}
 
 	@Override

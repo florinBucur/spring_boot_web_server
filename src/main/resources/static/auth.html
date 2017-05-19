@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>evConnect</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://file.myfontastic.com/TzBPmHC5AkVxduNCj3C7zd/icons.css" rel="stylesheet">
+  <link href="materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="style/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="style/style-register.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+  <nav id="nav" class="transparent" role="navigation" style="z-index:1000">
+    <div class="nav-wrapper row">
+      <a href="#" data-activates="nav-mobile" style="position:absolute;" class="button-collapse"><i class="material-icons">menu</i></a>
+
+      <a id="logo-container" href="#" class="left col offset-s1 offset-l1 offset-m1 s8 l4 m4 valign-wrapper hide-on-med-and-down">
+        <div class="hide-on-med-and-down center">
+          <img src="images/logo_mic.png" style="height:30px; margin-top:20px;">
+        </div>
+      </a>
+
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="register.html">Sign up</a></li>
+        <li><a href="auth.html">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <form method="post" action="login" id="login">
+    <section class="row no-pad-bot no-margin full-page valign-wrapper" id="login-banner">
+
+      <table class="col s10 m6 l6 offset-s1 offset-m3 offset-l3">
+        <tr>
+          <td>
+            <div class=" offset-l3 valign-wrapper">
+              <img src="images/logo.png" class="centerImage" style="max-height:170px;">
+            </div>
+          </td>
+        </tr>
+        <tr style="height:40px;">
+        </tr>
+
+        <tr>
+          <td style="text-align:center;">
+            <input type="email" class="email-box-login" id="username">
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align:center;">
+            <input type="password" class="password-box-login" id="password">
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align:center;">
+            <input type="submit" class="submit-box-login transparent" value="">
+          </td>
+        </tr>
+      </table>
+
+    </section>
+  </form>
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
+  <script src="materialize/js/materialize.min.js "></script>
+  <script src="js/login.js "></script>
+
+</body>
+
+</html>
