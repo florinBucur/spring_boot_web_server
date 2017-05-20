@@ -36,7 +36,7 @@
         headers: {
           'Content-Type': 'application/json',
         },
-        url: 'https://141.85.224.158:8443/evconnect/login',
+        url: '/login',
         data: JSON.stringify({
           "username": $("#username").val(),
           "password": $("#password").val(),
@@ -50,7 +50,7 @@
             headers: {
               'Content-Type': 'application/json',
             },
-            url: 'https://141.85.224.158:8443/evconnect/logg',
+            url: '/logg',
             data: JSON.stringify({
               "email": localStorage['username']
             }),
@@ -75,7 +75,7 @@
         'Content-Type': 'application/json',
         'Authorization': localStorage['xhayz']
       },
-      url: 'https://141.85.224.158:8443/evconnect/dummy',
+      url: '/dummy',
 
       success: function(data, textStatus, request) {
         console.log(data);

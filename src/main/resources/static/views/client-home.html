@@ -9,9 +9,11 @@
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://file.myfontastic.com/TzBPmHC5AkVxduNCj3C7zd/icons.css" rel="stylesheet">
-  <link href="materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="style/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="style/style-account.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="/style/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="/style/style-account.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link rel="stylesheet" href="/js/datepickk.min.css">
+
 </head>
 
 <body>
@@ -21,41 +23,62 @@
 
       <a id="logo-container" href="#" class="left col offset-s1 offset-l1 offset-m1 s8 l4 m4 valign-wrapper hide-on-med-and-down">
         <div class="hide-on-med-and-down center">
-          <img src="images/register_login/logo.png" style="height:30px; margin-top:20px;">
+          <img src="/images/register_login/logo.png" style="height:30px; margin-top:20px;">
         </div>
       </a>
 
       <ul class="right hide-on-med-and-down">
-        <li><a href="admin-requests.html">Requests</a></li>
-        <li><a href="auth.html">Logout</a></li>
+        <li><a href="logout.html">Logout</a></li>
       </ul>
     </div>
   </nav>
 
 
   <form method="post" action="login" id="login">
+    <section class="row no-pad-bot no-margin full-page valign-wrapper" id="login-banner">
+      <table>
+        <tr>
+          <td>
+            <h4 class="col s12 m12 l12 center" id="firm_name">Loading your account...</h4>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="row">
+
+              <div class="col s5 m5 l5 offset-s1 offset-m1 offset-l1 valign-wrapper">
+                <div class="input-field col s12 m12 l12 flow-text valign">
+                  <select class="flow-text" id="opt">
+                           <option value="1">Option 1</option>
+                           <option value="2">Option 2</option>
+                           <option value="3">Option 3</option>
+                  </select>
+                  <label for="opt">Choose a location</label>
+                  <button id="continue" class="btn col s12 m12 l12" style="background-color:#1b363f">Continue</button>
+                </div>
+              </div>
+              <div class="col s4 m4 l4  offset-s1 offset-m1 offset-l1">
+                <div class="col s12 m12 l12 flow-text" id="calendar" class="grey">
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </section>
 
     <section class="row no-pad-bot no-margin full-page valign-wrapper" id="login-banner">
       <table>
         <tr>
           <td>
-            <h4 class="col s12 m12 l12 center">University Politehnica of Bucharest</h4>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <h5 class="center" style="color:#616161">Faculty of Automatic control and Computer Science</h5>
+            <h4 class="col s12 m12 l12 center" id="selected_location">Loading selection....</h4>
           </td>
         </tr>
         <tr>
           <td>
             <ul class="col s12 m8 l8 offset-m2 offset-l2 collapsible popout flow-text" style="padding:0;" data-collapsible="accordion">
-              <li>
-                <div class="collapsible-header">First</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-              </li>
-              <li>
-                <div class="collapsible-header active"><i class="material-icons">add</i> Add Hall</div>
+              <li id="0hall" class="hidden">
+                <div class="collapsible-header active"><i class="material-icons" id="name">add</i> Name</div>
                 <div class="collapsible-body">
                   <form>
                     <div class="row">
@@ -64,29 +87,25 @@
                           <div class="card-content white-text">
                             <div class="row">
                               <div class="input-field col s6">
-                                <input placeholder="EC101" id="name" type="text" class="validate">
-                                <label for="name">Name</label>
-                              </div>
-                              <div class="input-field col s6">
-                                <input placeholder="100" id="surface" type="text" class="validate">
+                                <input placeholder="100" id="surface" type="text" class="validate" disabled>
                                 <label for="surface">Surface(mp)</label>
                               </div>
                               <div class="input-field col s6">
-                                <input placeholder="1st floor" id="floor" type="text" class="validate">
+                                <input placeholder="1st floor" id="floor" type="text" class="validate" disabled>
                                 <label for="floor">Floor</label>
                               </div>
                               <div class="input-field col s6">
-                                <input placeholder="16:00-20:00" id="available_hours" type="text" class="validate">
+                                <input placeholder="16:00-20:00" id="available_hours" type="text" class="validate" disabled>
                                 <label for="available_hours">Available hours</label>
                               </div>
                               <div class="input-field col s6">
-                                <input placeholder="16:00-20:00" id="capacity" type="text" class="validate">
+                                <input placeholder="16:00-20:00" id="capacity" type="text" class="validate" disabled>
                                 <label for="capacity">Capacity</label>
                               </div>
                             </div>
                           </div>
                           <div class="card-action">
-                            <a href="#" class="right"><input type="submit" value="Save" class="btn transparent black-text"></a>
+                            <a href="#" class="right"><input type="submit" value="Request" class="btn transparent black-text"></a>
                           </div>
                         </div>
                       </div>
@@ -97,13 +116,13 @@
           </td>
         </tr>
       </table>
-
     </section>
   </form>
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
-  <script src="materialize/js/materialize.min.js "></script>
-  <script src="js/login.js "></script>
+  <script src="/materialize/js/materialize.min.js "></script>
+  <script src="/js/datepickk.min.js"></script>
+  <script src="/js/client.js"></script>
 
 </body>
 

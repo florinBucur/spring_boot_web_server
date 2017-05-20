@@ -41,7 +41,7 @@
         headers: {
           'Content-Type': 'application/json',
         },
-        url: 'https://141.85.224.158:8443/evconnect/signup',
+        url: '/signup',
         data: JSON.stringify({
           "email": $("#email").val(),
           "password": $("#password").val(),

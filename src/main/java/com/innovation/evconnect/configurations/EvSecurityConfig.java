@@ -31,7 +31,7 @@ public class EvSecurityConfig extends WebSecurityConfigurerAdapter {
 				// allow the request to get to login service
 				.antMatchers(HttpMethod.POST, "/login", "/signup","/logg").permitAll()
 				.antMatchers(HttpMethod.GET, "/","/client-home.html","/admin-home.html","/admin-requests.html","/createRoom","/auth.html", "/register.html", "/locations","/js/**", "/materialize/**",
-						"/style/**", "/images/**", "/dist/**")
+						"/style/**", "/images/**", "/dist/**", "/index.html", "/views/**")
 				.permitAll()
 				// enforce security for the rest of the calls
 				.anyRequest().authenticated().and()
