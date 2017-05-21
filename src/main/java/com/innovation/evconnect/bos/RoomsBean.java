@@ -1,5 +1,7 @@
 package com.innovation.evconnect.bos;
 
+import java.sql.Timestamp;
+
 public class RoomsBean {
 
 	private long id;
@@ -9,6 +11,14 @@ public class RoomsBean {
 	private String name;
 	private String availability;
 	private String owner;
+	private Timestamp date;
+	
+	public Timestamp getDate() {
+		return date;
+	}
+	public void setDate(Timestamp date) {
+		this.date = date;
+	}
 	public long getId() {
 		return id;
 	}
@@ -52,61 +62,8 @@ public class RoomsBean {
 		this.owner = owner;
 	}
 	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((availability == null) ? 0 : availability.hashCode());
-		result = prime * result + ((capacity == null) ? 0 : capacity.hashCode());
-		result = prime * result + floor;
-		result = prime * result + (int) (id ^ (id >>> 32));
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((owner == null) ? 0 : owner.hashCode());
-		result = prime * result + ((surface == null) ? 0 : surface.hashCode());
-		return result;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		RoomsBean other = (RoomsBean) obj;
-		if (availability == null) {
-			if (other.availability != null)
-				return false;
-		} else if (!availability.equals(other.availability))
-			return false;
-		if (capacity == null) {
-			if (other.capacity != null)
-				return false;
-		} else if (!capacity.equals(other.capacity))
-			return false;
-		if (floor != other.floor)
-			return false;
-		if (id != other.id)
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (owner == null) {
-			if (other.owner != null)
-				return false;
-		} else if (!owner.equals(other.owner))
-			return false;
-		if (surface == null) {
-			if (other.surface != null)
-				return false;
-		} else if (!surface.equals(other.surface))
-			return false;
-		return true;
-	}
-	@Override
 	public String toString() {
 		return "RoomsBean [id=" + id + ", floor=" + floor + ", capacity=" + capacity + ", surface=" + surface
-				+ ", name=" + name + ", availability=" + availability + ", owner=" + owner + "]";
+				+ ", name=" + name + ", availability=" + availability + ", owner=" + owner + ", date=" + date + "]";
 	}
 }
