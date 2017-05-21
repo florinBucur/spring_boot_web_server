@@ -16,6 +16,8 @@ public interface RoomsRepository extends CrudRepository<Rooms, String>{
 
 	@Query("select rs from Rooms rs where rs.id not in (select room.id from Reserved)")
 	List<Rooms> availableRooms();
-
+	
+	@Query("select rs from Rooms rs where rs.owner = :username")
+	List<Rooms> roomsByUser(@Param("username") String username);
 	
 }

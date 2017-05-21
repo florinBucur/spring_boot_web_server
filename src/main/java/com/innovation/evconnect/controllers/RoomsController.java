@@ -11,9 +11,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.innovation.evconnect.bos.LocationBean;
 import com.innovation.evconnect.bos.MessageBean;
 import com.innovation.evconnect.bos.RoomsBean;
 import com.innovation.evconnect.entities.Rooms;
@@ -36,7 +36,7 @@ public class RoomsController {
 	public ResponseEntity<MessageBean> createRoom(@RequestBody RoomsBean roomB){
 		Rooms room = new Rooms();
 		AuthUsers authU = new AuthUsers();
-		room.setOwner(authU.getLoggedUsername());
+		room.setOwner(authU.getLoggedUsername().trim());
 		room.setAvailability(roomB.getAvailability());
 		room.setCapacity(roomB.getCapacity());
 		room.setFloor(roomB.getFloor());
@@ -56,6 +56,7 @@ public class RoomsController {
 		List<Rooms> entities = roomsRepository.availableRooms();
 		for(Rooms room : entities){
 			RoomsBean bean = new RoomsBean();
+			bean.setOwner(room.getOwner().trim());
 			bean.setAvailability(room.getAvailability());
 			bean.setCapacity(room.getCapacity());
 			bean.setFloor(room.getFloor());
@@ -66,4 +67,52 @@ public class RoomsController {
 		}
 		return result;
 	}
+
+	@GetMapping("/getRoomsByLocation")
+	public List<RoomsBean> getRoomsByLocation(@RequestParam("location") String location){
+		List<RoomsBean> result = new ArrayList<>();
+		List<Rooms> entities = roomsRepository.availableRooms();
+		List<Users> usersEntities = (List<Users>) repository.findAll();
+		String username = "";
+		for(Users user : usersEntities){
+			if(user.getLocation().equals(location))
+				username = user.getUserName();
+		}
+		for(Rooms room : entities){
+			if(room.getOwner().equals(username)){
+				RoomsBean bean = new RoomsBean();
+				bean.setOwner(room.getOwner().trim());
+				bean.setAvailability(room.getAvailability());
+				bean.setCapacity(room.getCapacity());
+				bean.setFloor(room.getFloor());
+				bean.setName(room.getName());
+				bean.setSurface(room.getSurface());
+				bean.setDate(room.getDate());
+				result.add(bean);
+			}
+		}
+		return result;
+	}
+	
+	@GetMapping("/getRoomsByUser")
+	public List<RoomsBean> getRoomsByUser(@RequestParam("user") String user){
+		List<RoomsBean> result = new ArrayList<>();
+		List<Rooms> rooms = roomsRepository.roomsByUser(user);
+		System.out.println(user);
+		System.out.println(rooms.toString());
+		for(Rooms room : rooms){
+			RoomsBean bean = new RoomsBean();
+			bean.setOwner(room.getOwner().trim());
+			bean.setAvailability(room.getAvailability());
+			bean.setCapacity(room.getCapacity());
+			bean.setFloor(room.getFloor());
+			bean.setName(room.getName());
+			bean.setSurface(room.getSurface());
+			bean.setDate(room.getDate());
+			result.add(bean);
+		}
+		return result;
+	}
+	
+	
 }
