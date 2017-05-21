@@ -38,9 +38,14 @@ public class SignupController {
 		List<Authorities> auths = new ArrayList<>();
 		auths.add(authority);
 		user.setAuthorities(auths);
-		userRepository.save(user);
-//		return new ResponseEntity<MessageBean>(new MessageBean("User Created !!!"), HttpStatus.OK);
-		return new ResponseEntity<>(HttpStatus.OK);
+		try{
+			userRepository.save(user);
+		}catch(Exception e){
+			return new ResponseEntity<MessageBean>(new MessageBean(), HttpStatus.OK);
+		}
+		
+		return new ResponseEntity<MessageBean>(new MessageBean(), HttpStatus.OK);
+//		return new ResponseEntity<>(HttpStatus.OK);
 	}
 	
 	@PostMapping(value = "/logg")

@@ -19,22 +19,23 @@
     $('#partener').on('click', function() {
       type = "admin";
       $('#become').html("Become a partener");
+      $('#location-elem').removeClass('hide');
       step = 1;
     });
 
     $('#client').on('click', function() {
       type = "user";
       $('#become').html("Become a client");
+      $('#location-elem').addClass('hide');
       step = 1;
     });
 
     $('#register').on('submit', function(e) {
       e.preventDefault(); //prevent form from submitting
-      console.log({
-        "email": $("#email").val(),
-        "password": $("#password").val(),
-        "role": type
-      })
+      if(type == "user") {
+        $("#location").val(type);
+      }
+
       $.ajax({
         type: "POST",
         method: "POST",
@@ -46,13 +47,13 @@
           "email": $("#email").val(),
           "password": $("#password").val(),
           "role": type,
-	  "location":"UPB"
+	         "location": $("#location").val()
         }),
 
         success: function(result) {
-          Materialize.toast('Account successfully created. Please wait...', 3000); // 3000 is the duration of the toast
+          Materialize.toast('Account successfully created. Please wait...', 5000); // 3000 is the duration of the toast
           setTimeout(function() {
-            window.location.replace(data.replace("\"", "").replace("\"", "") + "-home.html");
+            window.location.replace(result.replace("\"", "").replace("\"", "") + "-home.html");
           }, 4000); //will call the function after 2 secs.
         },
         error: function(result) {
