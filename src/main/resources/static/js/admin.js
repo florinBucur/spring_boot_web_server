@@ -7,17 +7,10 @@
     var step = 0;
 
     if (localStorage['xhayz'] == 0) {
-      //window.location.replace("auth.html");
+      window.location.replace("auth.html");
     } else {
       $('#firm_name').html(localStorage['username']);
     }
-
-    var demoPicker = new Datepickk({
-      container: document.querySelector('#calendar'),
-      inline: true,
-      range: false,
-      maxSelections: 1
-    });
 
     jQuery.fn.insertAt = function(index, element) {
       var lastIndex = this.children().size();
@@ -48,27 +41,32 @@
     add_location("EC101", 1, 2, 3, 4);
     add_location("EC102", 5, 6, 7, 8);
 
-    function add_institution(name) {
-      $('#opt').insertAt(0, $('#opt').children().first().clone().html(name));
-      $('select').material_select();
-    }
+    $('#add_room').on('submit', function(e) {
+      e.preventDefault(); //prevent form from submitting
 
-    add_institution(1)
-    add_institution(2)
+      $.ajax({
+        type: "POST",
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': localStorage['xhayz']
+        },
 
-    $.ajax({
-      type: "GET",
-      method: "GET",
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': localStorage['xhayz']
-      },
+        data: JSON.stringify({
+          "owner": localStorage['username'],
+          "availability": $("#add_room #available_hours").val(),
+          "capacity": $("#add_room #capacity").val(),
+           "floor": $("#add_room #floor").val(),
+           "name": $("#add_room #name").val(),
+           "surface": $("#add_room #surface").val()
+        }),
 
-      url: '/allLocations',
+        url: '/createRoom',
 
-      success: function(data, textStatus, request) {
-        console.log(data);
-      },
+        success: function(data, textStatus, request) {
+          window.location.reload();
+        },
+      });
     });
 
   }); // end of document ready

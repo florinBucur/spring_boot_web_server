@@ -33,8 +33,6 @@
   </nav>
 
 
-  <form method="post" action="login" id="login">
-
     <section class="row no-pad-bot no-margin full-page valign-wrapper" id="login-banner">
       <table>
         <tr>
@@ -50,14 +48,40 @@
         <tr>
           <td>
             <ul class="col s12 m8 l8 offset-m2 offset-l2 collapsible popout flow-text" style="padding:0;" data-collapsible="accordion">
-              <li>
-                <div class="collapsible-header">First</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+              <li id="0hall" class="hidden">
+                <div class="collapsible-header active"><i class="material-icons" id="name">add</i> Name</div>
+                <div class="collapsible-body">
+                    <div class="row">
+                      <div class="col s12 m12 l12">
+                        <div class="card whiteish darken-1">
+                          <div class="card-content white-text">
+                            <div class="row">
+                              <div class="input-field col s6">
+                                <input placeholder="100" id="surface" type="text" class="validate" disabled>
+                                <label for="surface">Surface(mp)</label>
+                              </div>
+                              <div class="input-field col s6">
+                                <input placeholder="1st floor" id="floor" type="text" class="validate" disabled>
+                                <label for="floor">Floor</label>
+                              </div>
+                              <div class="input-field col s6">
+                                <input placeholder="16:00-20:00" id="available_hours" type="text" class="validate" disabled>
+                                <label for="available_hours">Available hours</label>
+                              </div>
+                              <div class="input-field col s6">
+                                <input placeholder="16:00-20:00" id="capacity" type="text" class="validate" disabled>
+                                <label for="capacity">Capacity</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
               </li>
               <li>
                 <div class="collapsible-header active"><i class="material-icons">add</i> Add Hall</div>
                 <div class="collapsible-body">
-                  <form>
+                  <form action="#" id="add_room">
                     <div class="row">
                       <div class="col s12 m12 l12">
                         <div class="card whiteish darken-1">
@@ -72,7 +96,7 @@
                                 <label for="surface">Surface(mp)</label>
                               </div>
                               <div class="input-field col s6">
-                                <input placeholder="1st floor" id="floor" type="text" class="validate">
+                                <input placeholder="1" id="floor" type="text" class="validate">
                                 <label for="floor">Floor</label>
                               </div>
                               <div class="input-field col s6">
@@ -80,13 +104,13 @@
                                 <label for="available_hours">Available hours</label>
                               </div>
                               <div class="input-field col s6">
-                                <input placeholder="16:00-20:00" id="capacity" type="text" class="validate">
+                                <input placeholder="1000" id="capacity" type="text" class="validate">
                                 <label for="capacity">Capacity</label>
                               </div>
                             </div>
                           </div>
                           <div class="card-action">
-                            <a href="#" class="right"><input type="submit" value="Save" class="btn transparent black-text"></a>
+                            <a href="#" class="right"><input type="submit" value="Save" name="add_room" class="btn transparent black-text"></a>
                           </div>
                         </div>
                       </div>
@@ -99,11 +123,11 @@
       </table>
 
     </section>
-  </form>
+
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
   <script src="/materialize/js/materialize.min.js "></script>
-  <script src="/js/login.js "></script>
+  <script src="/js/admin.js "></script>
 
 </body>
 

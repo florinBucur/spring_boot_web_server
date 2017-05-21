@@ -29,8 +29,8 @@ public class EvSecurityConfig extends WebSecurityConfigurerAdapter {
 		// disable csrf for our requests.
 		http.csrf().disable().authorizeRequests()
 				// allow the request to get to login service
-				.antMatchers(HttpMethod.POST, "/login", "/signup","/logg").permitAll()
-				.antMatchers(HttpMethod.GET, "/","/client-home.html","/admin-home.html","/admin-requests.html","/createRoom","/auth.html", "/register.html", "/locations","/js/**", "/materialize/**",
+				.antMatchers(HttpMethod.POST, "/login", "/signup","/logg", "/views/**").permitAll()
+				.antMatchers(HttpMethod.GET, "/","/views/client-home.html","/views/admin-home.html","/admin-requests.html","/createRoom","/auth.html", "/register.html", "/locations","/js/**", "/materialize/**",
 						"/style/**", "/images/**", "/dist/**", "/index.html", "/views/**")
 				.permitAll()
 				// enforce security for the rest of the calls

@@ -21,14 +21,7 @@
 
     $('#login').on('submit', function(e) {
       e.preventDefault(); //prevent form from submitting
-      // $.post({
-      //   url: 'https://141.85.224.158:8443/evconnect/login',
-      //   data: JSON.stringify({
-      //     "username": $("#username").val(),
-      //     "password": $("#password").val(),
-      //   }),
-      //   dataType: 'json'
-      // }).done(console.log("done"));
+  
       localStorage['username'] = $("#username").val();
       $.ajax({
         type: "POST",

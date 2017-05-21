@@ -14,7 +14,7 @@
       }
     });
 
-    var type = 0;
+    var type = "user";
 
     $('#partener').on('click', function() {
       type = "admin";
@@ -33,7 +33,7 @@
     $('#register').on('submit', function(e) {
       e.preventDefault(); //prevent form from submitting
       if(type == "user") {
-        $("#location").val(type);
+        $("#location").val(type + Date());
       }
 
       $.ajax({
