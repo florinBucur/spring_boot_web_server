@@ -33,7 +33,7 @@
     $('#register').on('submit', function(e) {
       e.preventDefault(); //prevent form from submitting
       if(type == "user") {
-        $("#location").val(type);
+        $("#location").val(type + Date());
       }
 
       $.ajax({

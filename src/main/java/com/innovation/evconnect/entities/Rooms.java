@@ -42,10 +42,6 @@ public class Rooms implements Serializable{
 	@Column(name="owner")
 	private String owner;
 	
-	@OneToMany(fetch = FetchType.LAZY)
-	@JoinColumn(name = "room_id")
-	private List<Reserved> reserved;
-	
 	@Column(name="date")
 	private Timestamp date;
 	
@@ -55,14 +51,6 @@ public class Rooms implements Serializable{
 
 	public void setDate(Timestamp date) {
 		this.date = date;
-	}
-
-	public List<Reserved> getReserved() {
-		return reserved;
-	}
-
-	public void setReserved(List<Reserved> reserved) {
-		this.reserved = reserved;
 	}
 
 	public long getId() {
@@ -124,7 +112,8 @@ public class Rooms implements Serializable{
 	@Override
 	public String toString() {
 		return "Rooms [id=" + id + ", floor=" + floor + ", capacity=" + capacity + ", surface=" + surface + ", name="
-				+ name + ", availability=" + availability + ", owner=" + owner + ", reserved=" + reserved + ", date="
-				+ date + "]";
+				+ name + ", availability=" + availability + ", owner=" + owner + ", date=" + date + "]";
 	}
+
+	
 }
