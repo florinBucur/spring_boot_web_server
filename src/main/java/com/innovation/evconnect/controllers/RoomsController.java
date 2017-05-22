@@ -79,7 +79,7 @@ public class RoomsController {
 				username = user.getUserName();
 		}
 		for(Rooms room : entities){
-			if(room.getOwner().equals(username)){
+			if(room.getOwner().equals(username.trim())){
 				RoomsBean bean = new RoomsBean();
 				bean.setOwner(room.getOwner().trim());
 				bean.setAvailability(room.getAvailability());
