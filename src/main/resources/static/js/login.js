@@ -21,7 +21,7 @@
 
     $('#login').on('submit', function(e) {
       e.preventDefault(); //prevent form from submitting
-  
+
       localStorage['username'] = $("#username").val();
       $.ajax({
         type: "POST",
@@ -49,6 +49,7 @@
             }),
 
             success: function(data, textStatus, request) {
+              console.log(data);
               window.location.replace(data.replace("\"", "").replace("\"", "") + "-home.html");
             },
 

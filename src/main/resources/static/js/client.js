@@ -45,16 +45,6 @@
       $('.collapsible').collapsible();
     }
 
-    add_location("EC101", 1, 2, 3, 4);
-    add_location("EC102", 5, 6, 7, 8);
-
-    function add_institution(name) {
-      $('#opt').insertAt(0, $('#opt').children().first().clone().html(name));
-      $('select').material_select();
-    }
-
-    add_institution(1)
-    add_institution(2)
 
     $.ajax({
       type: "GET",
@@ -67,9 +57,40 @@
       url: '/allLocations',
 
       success: function(data, textStatus, request) {
-        console.log(data);
+        $('#opt').insertAt(0, $('#opt').children().first().clone().html(data[0]['name']));
+        $('#opt').children().last().remove();
+        for(var i = 1; i < data.length; i++) {
+          $('#opt').insertAt(0, $('#opt').children().first().clone().html(data[i]['name']));
+        }
+        $('select').material_select();
       },
     });
+
+    $('#continue-form').on('submit', function (e) {
+      e.preventDefault();
+
+      $.ajax({
+        type: "GET",
+        method: "GET",
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': localStorage['xhayz']
+        },
+
+        data: {
+          "location": $('.select-dropdown').val()
+        },
+
+        url: '/getRoomsByLocation',
+
+        success: function(data, textStatus, request) {
+          for(i = 0; i < data.length; i++) {
+            add_location(data[i]['name'], data[i]['surface'], data[i]['floor'], data[i]['availability'], data[i]['capacity'])
+            $(window).scrollTop($('#select_step2').offset().top);
+          }
+        },
+      });
+    })
 
   }); // end of document ready
 })(jQuery); // end of jQuery name space

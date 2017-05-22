@@ -38,8 +38,27 @@
       $('.collapsible').collapsible();
     }
 
-    add_location("EC101", 1, 2, 3, 4);
-    add_location("EC102", 5, 6, 7, 8);
+
+      $.ajax({
+        type: "GET",
+        method: "GET",
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': localStorage['xhayz']
+        },
+
+        data: {
+          "user": localStorage['username']
+        },
+
+        url: '/getRoomsByUser',
+
+        success: function(data, textStatus, request) {
+          for(i = 0; i < data.length; i++) {
+            add_location(data[i]['name'], data[i]['surface'], data[i]['floor'], data[i]['availability'], data[i]['capacity'])
+          }
+        },
+      });
 
     $('#add_room').on('submit', function(e) {
       e.preventDefault(); //prevent form from submitting

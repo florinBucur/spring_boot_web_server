@@ -29,11 +29,15 @@ nav {
 }
 
 input {
-  color: #333332;
+  color: #333332 !important;
 }
 
 a {
   color: #333332 !important;
+}
+
+body {
+  overflow: hidden;
 }
 
 .badge {

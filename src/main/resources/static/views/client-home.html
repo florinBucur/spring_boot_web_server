@@ -6,6 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
   <title>evConnect</title>
 
+  <style>
+  input {
+    color:black !important;
+  }
+  </style>
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://file.myfontastic.com/TzBPmHC5AkVxduNCj3C7zd/icons.css" rel="stylesheet">
@@ -34,7 +39,7 @@
   </nav>
 
 
-  <form method="post" action="login" id="login">
+  <form method="get" action="continua" id="continue-form">
     <section class="row no-pad-bot no-margin full-page valign-wrapper" id="login-banner">
       <table>
         <tr>
@@ -50,8 +55,6 @@
                 <div class="input-field col s12 m12 l12 flow-text valign">
                   <select class="flow-text" id="opt">
                            <option value="1">Option 1</option>
-                           <option value="2">Option 2</option>
-                           <option value="3">Option 3</option>
                   </select>
                   <label for="opt">Choose a location</label>
                   <button id="continue" class="btn col s12 m12 l12" style="background-color:#1b363f">Continue</button>
@@ -66,8 +69,9 @@
         </tr>
       </table>
     </section>
+    </form>
 
-    <section class="row no-pad-bot no-margin full-page valign-wrapper" id="login-banner">
+    <section class="row no-pad-bot no-margin full-page valign-wrapper" id="select_step2">
       <table>
         <tr>
           <td>
@@ -117,7 +121,7 @@
         </tr>
       </table>
     </section>
-  </form>
+
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
   <script src="/materialize/js/materialize.min.js "></script>

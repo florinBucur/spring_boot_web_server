@@ -52,8 +52,8 @@
 
         success: function(result) {
           Materialize.toast('Account successfully created. Please wait...', 5000); // 3000 is the duration of the toast
-          setTimeout(function() {
-            window.location.replace(result.replace("\"", "").replace("\"", "") + "-home.html");
+          setTimeout(function() {console.log(result);
+            window.location.replace("/views/login.html");
           }, 4000); //will call the function after 2 secs.
         },
         error: function(result) {
